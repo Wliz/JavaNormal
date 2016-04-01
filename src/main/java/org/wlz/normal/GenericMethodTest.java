@@ -25,14 +25,30 @@ public class GenericMethodTest {
         String[] sa = new String[100];
         Collection<String> cs = new ArrayList();
         fromArrayToCollection(sa, cs);
-        List<Object> il = new ArrayList();
+        //List<Object> il = new ArrayList();
 
        /* Collection<Integer> cl = new ArrayList();
         cl.add(4);
         copy(il, cl);*/
+        List<Number> ln = new ArrayList();
+        //List<Integer> li = new ArrayList();
+       // Integer last = copy(ln,li);
+
+        List<String>[] lsa = new ArrayList[10];
+        Object[] oaa = lsa;
+        List<Integer> li = new ArrayList<Integer>();
+        li.add(new Integer(3));
+        oaa[0] = li;
+        String s = lsa[0].get(0);
+
     }
 
-    public static <T> void copy(List<T> dest,List<? extends T> src) {
-        System.out.println(src.get(0));
+    public static <T> T copy(List<? super T> dest,List<T> src) {
+        T last = null;
+        for (T ele : src) {
+            last = ele;
+            dest.add(ele);
+        }
+        return last;
     }
 }
