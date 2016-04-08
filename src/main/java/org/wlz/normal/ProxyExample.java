@@ -9,7 +9,7 @@ import java.lang.reflect.Proxy;
  * Created by lizhe on 2016/3/30.
  * Proxy,InvocationHandler动态代理处理创建对象，是spring事务等处理的AOP的基础
  */
-interface Person {
+interface Person1 {
     void walk();
 
     void sayHello(String name);
@@ -49,8 +49,8 @@ public class ProxyExample {
         Class personClazz = Proxy.getProxyClass(Person.class.getClassLoader(), new Class[]{Person.class});
         Constructor ctor = personClazz.getConstructor(new Class[]{InvocationHandler.class});
         Person person = (Person) ctor.newInstance(new Object[]{myIH});
-        person.walk();
-        person.sayHello("测试使用动态代理");
-
+       // person.walk();
+        //person.sayHello("测试使用动态代理");
+//
     }
 }

@@ -49,11 +49,8 @@
   </build>
 
   <dependencies>
-    <!--dependency>
-      <groupId>org.wlz</groupId>
-      <artifactId>[the artifact id of the block to be mounted]</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency-->
+    <!--JSP/Servlet传统应用程序-->
+
   </dependencies>
 
 </project>
