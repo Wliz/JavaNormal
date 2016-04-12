@@ -66,6 +66,7 @@ public class NioTest {
         cb.put("里");
         cb.put("好");
         cb.put("不");
+
         cb.flip();
         System.out.println(cb);
         ByteBuffer bb = charset.encode(cb);
